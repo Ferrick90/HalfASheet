@@ -28,7 +28,7 @@ extension HalfASheet {
     
     /// The background colour for the HalfASheet
     /// - Parameter backgroundColor: a UIColor
-    public func backgroundColor(_ backgroundColor: Color) -> Self {
+    public func backgroundColor(_ backgroundColor: UIColor) -> Self {
         var copy = self
         copy.backgroundColor = backgroundColor
         return copy
@@ -58,8 +58,8 @@ extension View {
     ///   - isPresented: binding to a Bool which controls whether or not to show the partial sheet
     ///   - title: an optional title for the sheet
     ///   - content: the sheet's content
-    public func halfASheet<T: View>(isPresented: Binding<Bool>, title: String? = nil, height: HalfASheetHeight = .proportional(0.84), backgroundColor: Color = Color(.tertiarySystemGroupedBackground) , @ViewBuilder content: @escaping () -> T) -> some View {
-        modifier(HalfASheetPresentationModifier(content: { HalfASheet(isPresented: isPresented, title: title, content: content).height(height).backgroundColor(backgroundColor) }))
+    public func halfASheet<T: View>(isPresented: Binding<Bool>, title: String? = nil, height: HalfASheetHeight = .proportional(0.84), @ViewBuilder content: @escaping () -> T) -> some View {
+        modifier(HalfASheetPresentationModifier(content: { HalfASheet(isPresented: isPresented, title: title, content: content).height(height) }))
     }
 }
 
