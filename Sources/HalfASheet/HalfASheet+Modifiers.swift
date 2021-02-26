@@ -58,8 +58,8 @@ extension View {
     ///   - isPresented: binding to a Bool which controls whether or not to show the partial sheet
     ///   - title: an optional title for the sheet
     ///   - content: the sheet's content
-    public func halfASheet<T: View>(isPresented: Binding<Bool>, title: String? = nil, @ViewBuilder content: @escaping () -> T) -> some View {
-        modifier(HalfASheetPresentationModifier(content: { HalfASheet(isPresented: isPresented, title: title, content: content) }))
+    public func halfASheet<T: View>(isPresented: Binding<Bool>, title: String? = nil, height: HalfASheetHeight = .proportional(0.84), @ViewBuilder content: @escaping () -> T) -> some View {
+        modifier(HalfASheetPresentationModifier(content: { HalfASheet(isPresented: isPresented, title: title, content: content, height: height) }))
     }
 }
 
