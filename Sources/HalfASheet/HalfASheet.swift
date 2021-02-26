@@ -179,12 +179,7 @@ extension HalfASheet {
             dismiss()
         } label: {
             ZStack {
-                Image(systemName: "xmark.circle.fill")
-                    .font(Font.title.weight(.semibold))
-                    .accentColor(Color(UIColor.lightGray.withAlphaComponent(0.2)))
-                Image(systemName: "xmark.circle.fill")
-                    .font(Font.title.weight(.semibold))
-                    .accentColor(Color(closeButtonColor))
+                Image("closeButton")
             }
         }
         
