@@ -59,7 +59,7 @@ extension View {
     ///   - title: an optional title for the sheet
     ///   - content: the sheet's content
     public func halfASheet<T: View>(isPresented: Binding<Bool>, title: String? = nil, height: HalfASheetHeight = .proportional(0.84), @ViewBuilder content: @escaping () -> T) -> some View {
-        modifier(HalfASheetPresentationModifier(content: { HalfASheet(isPresented: isPresented, title: title, content: content, height: height) }))
+        modifier(HalfASheetPresentationModifier(content: { HalfASheet(isPresented: isPresented, title: title, content: content).height(height) }))
     }
 }
 
